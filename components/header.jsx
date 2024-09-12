@@ -6,11 +6,12 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import Image from "next/image";
 
 const header = () => {
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 py-4">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -72,37 +73,45 @@ const header = () => {
         {/* Desktop Section */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <details>
-                <summary>Recipes</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Cake</a>
-                  </li>
-                  <li>
-                    <a>Pie</a>
-                  </li>
-                  <li>
-                    <a>CupCake</a>
-                  </li>
-                </ul>
-              </details>
+            <li className="relative group">
+              <a className="hover:cursor-pointer">Recipes</a>
+              <ul className="absolute hidden group-hover:block bg-white p-4 z-[100] shadow-lg rounded-md top-10">
+                <li className="py-1">
+                  <a href="#" className="block hover:bg-gray-200 px-2">
+                    Cake
+                  </a>
+                </li>
+                <li className="py-1">
+                  <a href="#" className="block hover:bg-gray-200 px-2">
+                    Pie
+                  </a>
+                </li>
+                <li className="py-1">
+                  <a href="#" className="block hover:bg-gray-200 px-2">
+                    CupCake
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li>
-              <details>
-                <summary>Recipes</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Batter</a>
-                  </li>
-                  <li>
-                    <a>Topping</a>
-                  </li>
-                  <li>
-                    <a>Spices/Flavors</a>
-                  </li>
-                </ul>
-              </details>
+            <li className="relative group">
+              <a className="hover:cursor-pointer">Ingredients</a>
+              <ul className="absolute hidden group-hover:block bg-white p-4 z-[100] shadow-lg rounded-md top-10">
+                <li className="py-1">
+                  <a href="#" className="block hover:bg-gray-200 px-2">
+                    Batter
+                  </a>
+                </li>
+                <li className="py-1">
+                  <a href="#" className="block hover:bg-gray-200 px-2">
+                    Topping
+                  </a>
+                </li>
+                <li className="py-1">
+                  <a href="#" className="block hover:bg-gray-200 px-2">
+                    Spices/Flavors
+                  </a>
+                </li>
+              </ul>
             </li>
             <li>
               <a>About</a>
@@ -131,6 +140,22 @@ const header = () => {
             />
           </div>
         </SignedIn>
+      </div>
+      {/**Image section for the bottom header */}
+      <div className="flex justify-center items-center relative w-full">
+        {/**Image will span horizontally across the page */}
+        <Image
+          src="/img/desserts.webp"
+          alt="Dessert image"
+          width={1920}
+          height={1080}
+          className="h-80 w-full object-cover backdrop-blur-md"
+        />
+        {/* Text overlay */}
+        <div className="absolute items-center justify-center">
+          <h1 className="text-4xl font-bold">Sweet Tooth</h1>
+          <p className="text-lg ">Indulge in the ultimate dessert experience</p>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@/componets/header";
+import Header from "@/components/header";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Home = () => {
