@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const header = () => {
   return (
-    <div>
+    <div className="">
       <div className="navbar bg-base-100 py-4">
         <div className="navbar-start">
           <div className="dropdown">
@@ -74,7 +74,7 @@ const header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li className="relative group">
-              <a className="hover:cursor-pointer">Recipes</a>
+              <a className="hover:cursor-pointer text-lg">Recipes</a>
               <ul className="absolute hidden group-hover:block bg-white p-4 z-[100] shadow-lg rounded-md top-10">
                 <li className="py-1">
                   <a href="#" className="block hover:bg-gray-200 px-2">
@@ -94,7 +94,7 @@ const header = () => {
               </ul>
             </li>
             <li className="relative group">
-              <a className="hover:cursor-pointer">Ingredients</a>
+              <a className="hover:cursor-pointer text-lg">Ingredients</a>
               <ul className="absolute hidden group-hover:block bg-white p-4 z-[100] shadow-lg rounded-md top-10">
                 <li className="py-1">
                   <a href="#" className="block hover:bg-gray-200 px-2">
@@ -114,7 +114,7 @@ const header = () => {
               </ul>
             </li>
             <li>
-              <a>About</a>
+              <a className="text-lg">About</a>
             </li>
           </ul>
         </div>
@@ -142,18 +142,22 @@ const header = () => {
         </SignedIn>
       </div>
       {/**Image section for the bottom header */}
-      <div className="flex justify-center items-center relative w-full">
+      <div className="flex justify-center items-center relative w-full ">
         {/**Image will span horizontally across the page */}
         <Image
           src="/img/desserts.webp"
           alt="Dessert image"
           width={1920}
           height={1080}
-          className="h-80 w-full object-cover backdrop-blur-md"
+          className="h-60 w-full object-cover "
         />
+        {/* Blur overlay */}
+        <div className="absolute inset-0 backdrop-blur-sm p-3"></div>
         {/* Text overlay */}
-        <div className="absolute items-center justify-center">
-          <h1 className="text-4xl font-bold">Sweet Tooth</h1>
+        <div className="absolute text-white text-center">
+          <h1 className="text-4xl font-bold items-center justify-center">
+            Sweet Tooth
+          </h1>
           <p className="text-lg ">Indulge in the ultimate dessert experience</p>
         </div>
       </div>
